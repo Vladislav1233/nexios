@@ -1,0 +1,117 @@
+$footer-bg: #e8e8e8;
+
+.footer {
+    background-color: $footer-bg;
+    text-align: center;
+    margin-top: auto;
+
+    @include tablet {
+        text-align: left;
+    }
+
+    &__wrapper {
+        padding: 88px $global-indent-container-mobile;
+
+        @include tablet {
+            display: flex;
+            padding: 0;
+        }
+    }
+
+    &__logo {
+        font-size: 0;
+        line-height: 0;
+        margin-bottom: 46px;
+
+        @include tablet {
+            margin-bottom: 0;
+        }
+    }
+
+    &__content {
+        margin-bottom: 46px;
+
+        @include tablet {
+            margin: 0 auto;
+        }
+
+        @include tablet-big {
+            margin: 0 0 0 80px;
+        }
+
+        p {
+            font-size: 2rem;
+            line-height: 35px;
+            color: #000;
+            margin: 0;
+        }
+
+        a {
+            color: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            text-decoration: none;
+
+            &:hover,
+            &:active,
+            &:focus {
+                color: $color-primary;
+            }
+        }
+    }
+
+    &__content &__mail-to {
+        border-bottom: 1px solid #000;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $color-primary;
+            border-bottom-color: $color-primary;
+        }
+    }
+
+    &__left {
+
+        @include tablet {
+            padding: 41px 0 41px $global-indent-container-mobile;
+            display: flex;
+            align-items: center;
+            flex-grow: 1;
+        }
+    }
+
+    &__button {
+
+        @include tablet {
+            width: 40%;
+            flex-shrink: 0;
+            max-width: 416px;
+        }
+
+        .button {
+            @include tablet {
+                height: 100%;
+                width: 100%;
+            }
+        }
+    }
+
+    .main-page__section & {
+
+        &__left {
+
+            @media (min-width: 1280px) and (max-height: $desktop-height-large) {
+                padding: 20px 0 20px 36px;
+            }
+        }
+
+        &__content p {
+
+            @media (min-width: 1280px) and (max-height: $desktop-height-large) {
+                font-size: 1.8rem;
+                line-height: 32px;
+            }
+        }
+    }
+}

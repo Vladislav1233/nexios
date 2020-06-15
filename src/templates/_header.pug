@@ -1,0 +1,46 @@
+include ./../components/logo/logo
+
+mixin nav-list(items)
+    +e('ul').nav-list
+        each item, index in items
+            +e.nav-item
+                +e('a').nav-link(href=(item.href), title=(item.text), class=(item.class ? item.class : ''))
+                    | #{item.text}
+
++b('header').header
+    +e('a')(href="javascript:void(0);").toggle-menu.js-toggle-menu
+        +e.hamburger
+            +e.icon-hamburger
+                span
+                span
+                span
+
+    +e.menu
+        +e.menu-wrapper
+            +e.logo
+                +logo()
+
+            +e('nav').nav
+                +nav-list([{
+                    text: 'Home',
+                    href: '/'
+                }, {
+                    text: 'Zo werkt het',
+                    href: 'how-it-works.html'
+                }, {
+                    text: 'Stories',
+                    href: 'blogs.html'
+                }, {
+                    text: 'Afspraak maken',
+                    href: 'contact.html'
+                }])
+
+            +e('form').search
+                +e.field-wrap
+                    +e('input')(type='search', placeholder="Zoekterm").input
+                    +e('button')(type="submit").icon-search
+                        span.icon
+                            svg
+                                use(xlink:href='#search')
+                +e.form-text
+                    | Connecting your cause

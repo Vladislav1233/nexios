@@ -1,0 +1,42 @@
+include ../../node_modules/bemto.pug/bemto.pug
+include ../components/logo/logo
+include ../components/favicon/favicon
+
+- set_bemto_settings({ prefix: { '': '', 'js-': true, '-': false }, element: '__', modifier: '--', default_tag: 'div' })
+
+block variables
+    - var buttonFooter = true
+
+doctype html
+html(lang='nl-NL')
+    head
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+
+        block head
+            title= pageTitle || ''
+            meta(name='description' content=pageDescription || '')
+            +favicon
+
+        meta(name="keywords" content="")
+        meta(name="copyright" content="")
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        meta(name="HandheldFriendly" content="True")
+
+        block styles
+            link(href='css/main.css' rel='stylesheet')
+
+        block scripts-head
+
+    body.js-menu-state
+        +b.main-container
+            #svg-sprite.visuallyhidden
+            include _header
+
+            +e.content
+                block content
+
+            block scripts-body
+                script(src='js/jquery-3.4.1.min.js')
+                script(src='js/vendor.js')
+                script(src='js/app.js')

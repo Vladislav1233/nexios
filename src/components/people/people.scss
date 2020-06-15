@@ -1,0 +1,246 @@
+.people {
+    margin-bottom: 90px;
+
+    @include desktop {
+        padding: 0 $global-indent-container-desktop;
+        max-width: 1260px + $global-indent-container-desktop + $global-indent-container-desktop;
+        margin: 0 auto 90px;
+        position: relative;
+    }
+
+    &__swiper-wrapper {
+        display: flex;
+    }
+
+    &__swiper-slide {
+        flex-shrink: 0;
+    }
+
+    &__carousel {
+        overflow: hidden;
+
+        @include tablet {
+            padding: 0 36px;
+        }
+
+        @include desktop {
+            position: relative;
+            padding: 0;
+        }
+    }
+
+    &__dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 25px;
+
+        @include desktop {
+            margin-top: 43px;
+        }
+
+        .swiper-pagination-bullet {
+            width: 10px;
+            height: 10px;
+            background-color: #A3A3A3;
+            flex-shrink: 0;
+            display: block;
+            border-radius: 50%;
+            margin: 0 11px;
+            cursor: pointer;
+
+            &-active {
+                background-color: #007594;
+            }
+        }
+    }
+
+    &__nav {
+        display: none;
+
+        @include desktop {
+            touch-action: none;
+            pointer-events: none;
+            display: block;
+            position: absolute;
+            z-index: 2;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+            padding-bottom: 53px;
+            color: $color-secondary;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0 20px 53px;
+        }
+
+        @include desktop-large {
+            width: auto;
+            left: -100px;
+            right: -100px;
+        }
+    }
+
+    &__nav-prev,
+    &__nav-next {
+        height: 30px;
+        width: 33px;
+        padding: 3px 3px;
+        outline: none;
+        border: none;
+        cursor: pointer;
+        touch-action: auto;
+        pointer-events: all;
+        transition: $transition-duration;
+
+        &:hover,
+        &:active,
+        &:focus {
+            color: $color-primary;
+            transition: $transition-duration;
+        }
+    }
+
+    &__nav-prev {
+        transform: rotate(180deg);
+    }
+}
+
+.person {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    margin: 0 auto;
+
+    &__image-wrap {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__content-wrap {
+        width: 84px;
+        height: 84px;
+        transition-property: width, height, background-color;
+        transition-duration: 0.3s;
+        overflow: hidden;
+        display: flex;
+        background-color: rgba(#FF8224, 1);
+        z-index: 1;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        align-items: center;
+
+        &:hover {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(#FF8224, 0.9);
+
+            .person__icon {
+                transform: rotate(-45deg);
+
+                &::before {
+                    left: 53%;
+                }
+
+                &:after {
+                    left: 50%;
+                    margin-left: 0;
+                }
+            }
+
+            .person__text {
+                transition: opacity 0.3s 0.3s;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__icon {
+        position: absolute;
+        bottom: 28px;
+        right: 28px;
+        width: 24px;
+        height: 24px;
+        flex-shrink: 0;
+        align-self: flex-end;
+        margin-top: auto;
+        transition: transform 0.3s;
+        z-index: 1;
+
+        &::before,
+        &::after {
+            content: '';
+            display: block;
+            width: 2px;
+            height: 24px;
+            position: absolute;
+            background-color: #fff;
+            border-radius: 2px;
+            transition: left 0.3s;
+        }
+
+        &::before {
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        &::after {
+            transform: rotate(90deg) translate(-50%, 0%);
+            left: 50%;
+            top: 1px;
+            margin-left: -1px;
+        }
+    }
+
+    &__text {
+        width: 300px;
+        flex-shrink: 0;
+        opacity: 0;
+        transition: opacity 0.3s 0s;
+        text-align: center;
+        padding: 0 20px;
+
+        h4 {
+            font-family: 'Exo 2.0';
+            font-weight: 700;
+            color: #fff;
+            font-size: 2.5rem;
+            line-height: 35px;
+            margin: 0 0 -2px;
+
+            @include desktop {
+                font-size: 3.3rem;
+                line-height: 43px;
+            }
+
+            &:after {
+                content: '';
+                display: block;
+                width: 31px;
+                height: 2px;
+                background-color: #fff;
+                margin: 0 auto;
+            }
+        }
+
+        p {
+            font-weight: 500;
+            color: #fff;
+            margin-bottom: 0;
+            line-height: 28px;
+
+            @include desktop {
+                font-size: 2rem;
+                line-height: 30px;
+            }
+        }
+    }
+}

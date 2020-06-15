@@ -1,0 +1,261 @@
+$button-indent-between-text-and-icon-mobile: 25px;
+$button-background-close: $color-blue;
+
+.button {
+    font-family: 'Exo 2.0 Semi';
+    background-color: $background-color-primary;
+    color: #fff;
+    font-size: 2.2rem;
+    line-height: 35px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    padding: 14px 40px;
+    min-height: 96px;
+    transition-property: background-color, color;
+    transition-duration: 0.3s;
+
+    &:hover {
+        background-color: $color-secondary;
+
+        .button__icon {
+            transform: translateX(10px);
+        }
+    }
+
+    @include desktop {
+        font-size: 3rem;
+        line-height: 45px;
+        padding: 20px 70px;
+    }
+
+    &__icon {
+        display: block;
+        width: 27px;
+        height: 18px;
+        flex-shrink: 0;
+        margin-left: auto;
+        transition-property: transform;
+        transition-duration: 0.3s;
+
+        .icon {
+            display: block;
+        }
+    }
+
+    &__text {
+        text-align: left;
+    }
+
+    &__text + &__icon {
+        margin-top: 8px;
+        width: 27px + $button-indent-between-text-and-icon-mobile;
+        padding-left: $button-indent-between-text-and-icon-mobile;
+
+        @include desktop {
+            margin-top: 6px;
+        }
+    }
+
+    &--full-width {
+        display: flex;
+
+        @include tablet {
+            display: inline-flex;
+        }
+    }
+
+    &--secondary {
+        background-color: $background-color-secondary;
+    }
+
+    &--close {
+        background-color: $button-background-close;
+        min-height: 124px;
+        width: 100%;
+
+        @include desktop {
+            height: 216px;
+            width: 216px;
+            padding: 0 15px;
+        }
+
+        &:hover {
+            background-color: #005167;
+
+            .button__icon {
+                transform: translateX(0);
+            }
+        }
+
+        .button__icon {
+            height: 27px;
+
+            @include desktop {
+                position: absolute;
+                top: 20px;
+                right: 5px;
+                padding: 0;
+                margin: 0;
+            }
+        }
+
+        .button__text {
+            display: block;
+
+            @include desktop {
+                text-align: center;
+                margin: auto;
+            }
+        }
+
+        .show-for-mobile {
+
+            @include desktop {
+                display: none;
+            }
+        }
+
+        .show-for-desktop {
+            display: none;
+
+            @include desktop {
+                display: block;
+            }
+        }
+    }
+
+    &--icon-left {
+
+        .button__text {
+            text-align: right;
+            padding-right: 0;
+            padding-left: $button-indent-between-text-and-icon-mobile;
+        }
+
+        .button__icon {
+            margin-left: 0;
+            margin-right: auto;
+            order: -1;
+            padding-left: 0;
+            padding-right: $button-indent-between-text-and-icon-mobile;
+        }
+
+        &:hover {
+
+            .button__icon {
+                transform: translateX(-10px);
+            }
+        }
+    }
+
+    &--without-text {
+        width: 57px;
+        height: 57px;
+        min-height: auto;
+        padding: 0;
+        justify-content: center;
+
+        &:hover {
+            .button__icon {
+                transform: translateX(5px);
+            }
+        }
+
+        @include desktop {
+            padding: 0;
+        }
+
+        .button__icon {
+            margin: 0;
+        }
+    }
+
+    &--link-style {
+
+        @include desktop {
+            background-color: transparent;
+            padding: 0;
+            color: #000;
+            font-size: 2.6rem;
+            border-bottom: 2px solid #000;
+            width: auto;
+            height: auto;
+            line-height: 45px;
+            min-height: auto;
+            transition-property: color, border-color;
+            transition-duration: 0.3s;
+        }
+
+        &:hover {
+            background-color: transparent;
+
+            @include desktop {
+                color: #005167;
+                border-bottom: 2px solid #005167;
+            }
+        }
+    }
+
+    &--small-square {
+        width: 156px;
+        height: 156px;
+        padding: 10px;
+        font-size: 2rem;
+        line-height: 35px;
+        justify-content: center;
+        font-family: 'Exo 2.0';
+        font-weight: 900;
+
+        &:hover {
+            background-color: #007594;
+        }
+
+        @include desktop {
+            font-size: 2rem;
+        }
+        .button__text {
+            margin-right: auto;
+            margin-left: auto;
+        }
+    }
+
+    &--large-square {
+        justify-content: center;
+        padding: 0 36px;
+        min-height: 124px;
+        width: 100%;
+
+        @include desktop {
+            min-height: auto;
+            width: 295px;
+            height: 295px;
+            flex-direction: column;
+            padding: 0 30px;
+            position: relative;
+        }
+
+        .button__icon {
+            @include desktop {
+                order: 1;
+                position: absolute;
+                bottom: 30px;
+                margin: 0;
+                padding: 0;
+                height: 21px;
+            }
+        }
+
+        .button__text {
+            @include desktop {
+                text-align: center;
+                padding-left: 0;
+            }
+        }
+    }
+
+    &--transparent {
+        background-color: transparent;
+        border: 3px solid #fff;
+    }
+}

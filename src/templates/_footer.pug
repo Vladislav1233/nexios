@@ -1,0 +1,23 @@
+include ./../components/logo/logo
+include ./../components/button/button
+
+block variables
+    - var buttonFooter = true
+
++b('footer').footer
+    +e.wrapper
+        +e.left
+            +e.logo
+                +logo('img/logo-nexios-black.svg')
+
+            +e.content
+                p Schoolstraat 1
+                p 4122 GA Zijderveld
+                p
+                    a(href="tel:0345709692") 0345 70 96 92
+                p
+                    +e('a')(href="mailto:info@nexios.com").mail-to info@nexios.com
+
+        if (buttonFooter)
+            +e.button
+                +button('a', 'Ik wil graag een afspraak maken', '#arrow-right')(href="contact.html").--full-width

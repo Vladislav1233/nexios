@@ -1,0 +1,26 @@
+include ../title-section-big/title-section-big
+include ../people/people
+
+mixin about
+    +b('article').about
+        +e.presentation
+            +e.presentation-inner
+                h1 Een gedreven club
+
+                +e.description 
+                    p We geloven in wereldverbeteraars. In de strijders tegen armoede, rampen, ziekten en ongelijkheid. Ook geloven we in de rol die IT hierin kan spelen. Onder andere met blije medewerkers die probleemloos hun werk kunnen doen.
+
+                img(src="img/photograph-of-men-having-conversation-seating-on-chair.jpg", alt="")
+
+        +e.content
+            +e.text
+                h2 Persoonlijk en transparant
+                p Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. 
+
+                h2 Etiam rhoncus
+                p Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi.
+
+            +e.title
+                +title-section-big('Wij gaan voor persoonlijk en transparant').--additional-background
+
+    +people()

@@ -1,0 +1,190 @@
+.statistics {
+
+    @include desktop {
+        padding-top: 50px;
+        min-height: 100%;
+    }
+
+    @include desktop-large {
+        padding-top: 101px;
+    }
+
+    &__text {
+        margin-bottom: 120px;
+
+        @include desktop {
+            max-width: 778px;
+            margin-bottom: 60px;
+        }
+
+        p {
+
+            @include desktop-large {
+                font-size: 2rem;
+                line-height: 35px;
+            }
+        }
+    }
+
+    &__carousel-wrapper {
+        margin: 0 (-$global-indent-container-mobile) 66px;
+
+        @include desktop {
+            margin: 0 0 96px;
+            font-size: 0;
+        }
+    }
+
+    &__carousel-indicators {
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__item {
+
+        @include desktop {
+            display: block;
+            margin: 0;
+            float: none;
+            position: static;
+            width: auto;
+        }
+    }
+
+    &__list {
+
+        @include desktop {
+            width: calc(100% - 310px);
+            display: inline-flex;
+            justify-content: space-between;
+            font-size: 0;
+            vertical-align: middle;
+            line-height: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+
+        @include desktop-large {
+            width: calc(100% - 580px);
+        }
+    }
+
+    &__link-more {
+        text-align: center;
+        margin-top: 50px;
+
+        @include desktop {
+            margin-top: 0;
+            display: inline-flex;
+            justify-content: flex-end;
+            vertical-align: middle;
+            width: 310px;
+        }
+
+        @include desktop-large {
+            width: 580px;
+        }
+
+        .button {
+            background-color: #005167;
+
+            @include desktop {
+                background-color: transparent;
+            }
+        }
+    }
+
+    &__footer {
+        margin: 0 (- $global-indent-container-mobile);
+        padding: 53px $global-indent-container-mobile 95px;
+        background-color: #E8E8E8;
+
+        @include desktop {
+            margin: 0 (- $global-indent-container-desktop);
+            padding: 53px $global-indent-container-desktop 105px;
+            position: sticky;
+            top: 100vh;
+            text-align: center;
+        }
+
+        @include desktop-large {
+            margin: 0 (- $global-indent-container-desktop-large);
+            padding: 53px $global-indent-container-desktop-large 105px;
+        }
+
+        a {
+            color: #FF8224;
+            text-decoration: none;
+        }
+
+        p {
+
+            @include desktop {
+                font-size: 2.2rem;
+                line-height: 38px;
+            }
+        }
+    }
+}
+
+.statistic {
+    width: 185px;
+    margin: 0 auto;
+    text-align: center;
+
+    img {
+        display: inline-block;
+        margin-bottom: 38px;
+
+        @include desktop {
+            height: 60px;
+            margin-bottom: 24px;
+        }
+
+        @include desktop-large {
+            height: auto;
+            margin-bottom: 38px;
+        }
+
+    }
+
+    h5 {
+        font-size: 3rem;
+        line-height: 40px;
+        font-family: 'Exo 2.0';
+        font-weight: 700;
+        margin-top: 0;
+        margin-bottom: 20px;
+
+        @include desktop {
+            font-size: 2.6rem;
+            line-height: 35px;
+            margin-bottom: 15px;
+        }
+
+        @include desktop-large {
+            margin-bottom: 20px;
+            font-size: 3rem;
+            line-height: 40px;
+        }
+    }
+
+    p {
+        font-size: 2rem;
+        line-height: 35px;
+
+        @include desktop {
+            font-size: 1.8rem;
+            line-height: 33px;
+        }
+
+        @include desktop-large {
+            font-size: 2rem;
+            line-height: 35px;
+        }
+    }
+}

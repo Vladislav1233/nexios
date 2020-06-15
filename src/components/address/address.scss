@@ -1,0 +1,20 @@
+.address {
+    font-size: 20px;
+    font-style: normal;
+    text-align: center;
+
+    @include tablet {
+        text-align: left;
+    }
+
+    a {
+        @include link-hover;
+        text-decoration: none;
+        border-bottom: 1px solid $text-color;;
+        color: $text-color;
+    }
+
+    p {
+        margin-bottom: 5px;
+    }
+}

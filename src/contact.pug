@@ -1,0 +1,17 @@
+//- Insert common template for all pages
+extends ./templates/_base-template
+
+include ./components/lets-talk/lets-talk
+
+prepend head
+    - var pageTitle = 'Nexios - Contact';
+
+block variables
+    - var buttonFooter = false
+
+block content
+    +b('main').main.--contact
+        +e.logo.js-hide-logo
+            +logo('img/logo-nexios-black.svg')
+
+        +lets-talk()

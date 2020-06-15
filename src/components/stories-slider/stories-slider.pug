@@ -1,0 +1,52 @@
+include ../button/button
+include ../dots/dots
+
+mixin stories-slider-list(items)
+    +e('ul').slider.-carousel-inner
+        each item, index in items
+            +e.item.-carousel-item(class=(index === 0 ? 'active' : ''))
+                +e.image-wrapper
+                    +e('img')(src=item.src, alt="")
+
+                +e.content
+                    h3 #{item.title}
+                    p #{item.text}
+
+                    +e.content-button
+                        +button('a', 'Lees verder', '#arrow-right')(href="blog.html")
+
+mixin stories-slider()
+    +b.stories-slider.-carousel.-slide.js-stories-slider(data-ride="carousel")
+
+        +stories-slider-list([{
+            src: 'img/clay-banks.jpg',
+            title: 'Donatiemodule van formaat',
+            text: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt…'
+        }, {
+            src: 'img/clay-banks.jpg',
+            title: 'Donatiemodule van formaat',
+            text: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt…'
+        }, {
+            src: 'img/clay-banks.jpg',
+            title: 'Donatiemodule van formaat',
+            text: 'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt…'
+        }])
+
+        +e.dots
+            +dots([{
+                    attributes: {
+                        "data-target": ".js-stories-slider",
+                        "data-slide-to": '0',
+                        "class": 'active'
+                    }
+                }, {
+                    attributes: {
+                        "data-target": ".js-stories-slider",
+                        "data-slide-to": '1'
+                    }
+                }, {
+                    attributes: {
+                        "data-target": ".js-stories-slider",
+                        "data-slide-to": '2'
+                    }
+                }]).-carousel-indicators

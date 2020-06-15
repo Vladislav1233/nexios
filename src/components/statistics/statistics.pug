@@ -1,0 +1,61 @@
+include ../dots/dots
+include ../button/button
+
+mixin statistic(icon, title, description)
+    +b.statistic
+        img(src=icon, alt=title)
+        h5 #{title}
+        p #{description}
+
+mixin statistics()
+    +b.statistics
+        +e.text
+            p Onze missie is om de processen bij goede doelen efficiënter te maken. Jouw bedrijfsproces is bij ons in goede handen. Samen met jou gaan we voor het beste resultaat. Zo dragen we met onze specifieke knowhow bij aan een betere wereld.
+
+        +e.carousel-wrapper.js-statistic-slider.-carousel.-slide
+            +e('ul').list.-carousel-inner
+                +e.item.carousel-item.-active
+                    +statistic(
+                        'img/easy-use.svg', 
+                        'Eenvoudig in gebruik',
+                        'Maecenas nec odio et ante tincidunt tempus.'
+                    )
+
+                +e.item.carousel-item
+                    +statistic(
+                        'img/data.svg', 
+                        'Inzicht in al je data',
+                        'Maecenas nec odio et ante tincidunt tempus.'
+                    )
+
+                +e.item.carousel-item
+                    +statistic(
+                        'img/fixed-price.svg', 
+                        'Gewoon een vaste prijs',
+                        'Maecenas nec odio et ante tincidunt tempus.'
+                    )
+            +e.carousel-indicators
+                +dots([{
+                    attributes: {
+                        "data-target": ".js-statistic-slider",
+                        "data-slide-to": '0',
+                        "class": 'active'
+                    }
+                }, {
+                    attributes: {
+                        "data-target": ".js-statistic-slider",
+                        "data-slide-to": '1'
+                    }
+                }, {
+                    attributes: {
+                        "data-target": ".js-statistic-slider",
+                        "data-slide-to": '2'
+                    }
+                }]).-carousel-indicators
+
+            +e.link-more
+                +button('a', 'Zo werkt het', '#arrow-right').--link-style.js-open-how-it-works
+        +e.footer
+            p “Verbinding komt terug in onze naam: 
+                a(href="#", title="") Nexios
+                |, gebaseerd op Nexus, verbinding in het Latijn. We leveren meer dan een service, we gaan een verbinding aan. Want we zijn op ons best als we betrokken zijn bij een klant. We denken mee en stoppen niet totdat alles perfect loopt.”

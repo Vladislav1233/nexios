@@ -1,0 +1,96 @@
+include ../button/button
+include ../logo/logo
+
+mixin nav-item(items)
+    each item, index in items
+        +e('a').nav-link.-nav-link(href=('#' + item.target), title="", data-toggle="tab", role="tab", aria-controls=item.target aria-selected=item.isAriaSelected, class=(index === 0 ? "active" : "")) #{index + 1}
+
+mixin article-how-it-work(title, text, list)
+    +e.article
+        h1 #{title}
+        p #{text}
+        ul
+            each itemList in list
+                li #{itemList}
+
+
+mixin how-it-works()
+    +b.how-it-works
+        //- +e.logo
+        //-     +logo('img/logo-nexios-black.svg')
+
+        +e.content
+            <!-- Nav tabs -->
+            +e().nav.-nav.-nav-tabs(role="tablist")
+                +nav-item([{
+                    target: 'first-step',
+                    isAriaSelected: 'true'
+                }, {
+                    target: 'second-step',
+                    isAriaSelected: 'false'
+                }, {
+                    target: 'third-step',
+                    isAriaSelected: 'false'
+                }])
+
+            <!-- Tab panes -->
+            +e.tab-content.-tab-content
+                +e(id='first-step', role="tabpanel", aria-labelledby="first-step").tab-pane.-tab-pane.-active.-show.-fade 
+
+                    +e.image-wrap
+                        +e('img')(src="img/step1-bg.svg").image
+
+                    +article-how-it-work(
+                        'Zo eenvoudig was het nog nooit.',
+                        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', [
+                            'Donec quam felis, ultricies nec',
+                            'Nulla consequat massa quis enim',
+                            'Donec pede justo fringilla vel'
+                        ]
+                    )
+
+                    +e.button
+                        +button('a', 'Hoe inzichtelijk wordt mijn data?', '#arrow-right')(href="#second-step").--large-square.js-toggle-tab
+
+                +e(id='second-step', role="tabpanel", aria-labelledby="second-step").tab-pane.-tab-pane.-fade 
+
+                    +e.image-wrap
+                        +e('img')(src="img/step2-bg.svg").image
+
+                    +article-how-it-work(
+                        'EIN-DE-LIJK écht overzicht.',
+                        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', [
+                            'Donec quam felis, ultricies nec',
+                            'Nulla consequat massa quis enim',
+                            'Donec pede justo fringilla vel'
+                        ]
+                    )
+
+                    +e.button
+                        +button('a', 'Wat mag dat kosten?', '#arrow-right')(href="#third-step").--large-square.js-toggle-tab
+                        +button('a', 'Makkelijk zeg je? Prove it!', '#arrow-left')(href="#first-step").--icon-left.--secondary.--large-square.js-toggle-tab
+
+                +e(id='third-step', role="tabpanel", aria-labelledby="third-step").tab-pane.-tab-pane.-fade 
+
+                    +e.image-wrap
+                        +e('img')(src="img/step3-bg.svg").image
+
+                    +article-how-it-work(
+                        'Vaste prijs. Zonder trucjes.',
+                        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.', [
+                            'Donec quam felis, ultricies nec',
+                            'Nulla consequat massa quis enim',
+                            'Donec pede justo fringilla vel'
+                        ]
+                    )
+
+                    +e.button
+                        +button('a', 'Duidelijk! Ik wil een afspraak!', '#arrow-right')(href="contact.html").--large-square
+                        +button('a', 'Hoe inzichtelijk wordt mijn data?', '#arrow-left')(href="#second-step").--icon-left.--secondary.--large-square.js-toggle-tab
+
+        +e.close
+            +button(
+                'a', 
+                '<span class="show-for-mobile">Ik wil graag een afspraak maken</span><span class="show-for-desktop">Sluiten</span>', 
+                '#arrow-right'
+            )(href="/#section-how-it-works").--close.js-close-modal

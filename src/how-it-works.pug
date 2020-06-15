@@ -1,0 +1,13 @@
+//- Insert common template for all pages
+extends ./templates/_base-template-how
+include ./components/how-it-works/how-it-works
+
+prepend head
+    - var pageTitle = 'Nexios - How it works';
+
+block content
+    +b('main').main.--how-it-works
+        +e.logo
+            +logo('img/logo-nexios-black.svg')
+
+        +how-it-works()

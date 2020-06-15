@@ -1,0 +1,40 @@
+include ../button/button
+
+mixin card(src, title, description)
+    +b.card
+        if(src)
+            +e('div').image-wrapper
+                +e('img')(src=src, alt=title).image
+
+        +e('div').content
+            +e('h3').title #{title}
+
+            +e.text
+                p #{description}
+
+        +e('div').button
+            +button('a', '', '#arrow-right')(href="blog.html").--without-text
+
+
+mixin cards()
+    +b('ul').cards
+        +e.item
+            +card(
+                'img/stories.jpg',
+                'Transparantie is “key”',
+                'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt…'
+            )
+
+        +e.item
+            +card(
+                'img/stories.jpg',
+                'Transparantie is “key”',
+                'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt…'
+            )
+
+        +e.item
+            +card(
+                'img/stories.jpg',
+                'Transparantie is “key”',
+                'Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante. Etiam sit amet orci eget eros faucibus tincidunt…'
+            )

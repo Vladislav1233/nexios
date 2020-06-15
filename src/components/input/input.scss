@@ -1,0 +1,41 @@
+.input {
+    margin-bottom: 36px;
+    width: 100%;
+
+    @include desktop {
+        margin-bottom: 0;
+    }
+
+    &__field {
+        border: none;
+        border-bottom: 1px solid $color-primary;
+        width: 100%;
+        font-size: 2rem;
+        line-height: 30px;
+        color: #000;
+        outline: none;
+        transition: border-color 0.3s;
+
+        &:hover {
+            border-color: #007594;
+        }
+
+        &::-webkit-input-placeholder {
+            color: #007594;
+        }
+        &::-moz-placeholder {
+            color: #007594;
+        }
+        &:-moz-placeholder {
+            color: #007594;
+        }
+        &:-ms-input-placeholder {
+            color: #007594;
+        }
+    }
+
+    &__label {
+        font-size: 2rem;
+        line-height: 35px;
+    }
+}

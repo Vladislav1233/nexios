@@ -1,0 +1,31 @@
+include ../button/button
+include ../input/input
+
+mixin lets-talk()
+    +b.lets-talk
+        +e.content
+            +e.name De eerste stap
+            +e('h1').title Je wilt verandering! Wij kunnen je helpen. Praatje maken?
+
+            +e('p').description Vul het formulier in en wij nemen contact met je op!
+
+        +e('form').form
+            +e.input
+                +input('voornaam', 'Voornaam')
+                +input('achternaam', 'Achternaam')
+
+            +e.input
+                +input('email', 'E-mail*', 'email')
+
+            +e.input
+                +input('telefoonnummer', 'Telefoonnummer', 'tel')
+
+            +e.input
+                +input('message', '*', '', 'textarea', 'Vertel ons waar je naar op zoek bent of op welk gebied je samen wilt werken. Met welke uitdaging kunnen wij je helpen?')
+
+            +e.footer
+                +e.notice
+                    p Nexios heeft de door jou verstrekte contactgegevens nodig om contact met je op te nemen over onze producten en diensten. Wij verstrekken deze gegevens niet aan derden. Beloofd!
+
+                +e.button
+                    +button('button', 'verzenden', '').--small-square

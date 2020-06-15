@@ -1,0 +1,61 @@
+include ../dots/dots
+include ../button/button
+
+mixin stat(icon, title, description)
+    +b.stat
+        img(src=icon, alt=title)
+        h5 #{title}
+        p #{description}
+
+mixin stats()
+    +b.stats
+        +e.text
+            p Ons ideaal? Goede doelen hebben soepele operationele processen en inzichtelijke data, waardoor ze meer inkomsten kunnen werven. En dat is precies waar de CRM&nbsp;software van Nexios in voorziet. Met elke maand nieuwe innovaties, een grote gebruiksvriendelijkheid en snelheid is het CRM van Nexios gemáákt voor de ambitieuze fondsenwerver. De kracht van Nexios CRM software:
+
+        +e.carousel-wrapper.js-stats-slider.-carousel.-slide.js-how-it-work-link-mobile
+            +e('ul').list.-carousel-inner
+                +e.item.carousel-item.-active
+                    +stat(
+                        'img/easy-use.svg', 
+                        'Eenvoudig in gebruik',
+                        'Maecenas nec odio et ante tincidunt tempus.'
+                    )
+
+                +e.item.carousel-item
+                    +stat(
+                        'img/data.svg', 
+                        'Inzicht in al je data',
+                        'Maecenas nec odio et ante tincidunt tempus.'
+                    )
+
+                +e.item.carousel-item
+                    +stat(
+                        'img/fixed-price.svg', 
+                        'Gewoon een vaste prijs',
+                        'Maecenas nec odio et ante tincidunt tempus.'
+                    )
+            +e.carousel-indicators
+                +dots([{
+                    attributes: {
+                        "data-target": ".js-stats-slider",
+                        "data-slide-to": '0',
+                        "class": 'active'
+                    }
+                }, {
+                    attributes: {
+                        "data-target": ".js-stats-slider",
+                        "data-slide-to": '1'
+                    }
+                }, {
+                    attributes: {
+                        "data-target": ".js-stats-slider",
+                        "data-slide-to": '2'
+                    }
+                }]).-carousel-indicators
+
+            +e.link-more.js-how-it-work-link
+                +button('a', 'Zo werkt het', '#arrow-right')(href="how-it-works.html")
+        +e.footer
+            p “Verbinding komt terug in onze naam: 
+                a(href="#", title="") Nexios
+                |, gebaseerd op Nexus, verbinding in het Latijn. We leveren meer dan een service, we gaan een verbinding aan. Want we zijn op ons best als we betrokken zijn bij een klant. We denken mee en stoppen niet totdat alles perfect loopt.”

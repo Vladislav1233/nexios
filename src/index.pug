@@ -1,0 +1,70 @@
+//- Insert common template for all pages
+extends ./templates/_base-template
+
+include ./components/title-section-big/title-section-big
+include ./components/logo/logo
+include ./components/button/button
+include ./components/stats/stats
+include ./components/stories/stories
+include ./components/dots/dots
+
+prepend head
+    - var pageTitle = 'Nexios';
+
+block content
+    +b('main').main
+        +e.logo
+            +logo('img/logo-nexios-white.svg')
+
+        +e.mouse
+            .icon
+                svg
+                    use(xlink:href='#mouse')
+
+        +e.dots
+            +dots([{
+                    attributes: {
+                        'data-move': '#1'
+                    }
+                }, {
+                    attributes: {
+                        'data-move': '#2'
+                    }
+                }, {
+                    attributes: {
+                        'data-move': '#3'
+                    }
+                }]).--page-scroll.js-page-scroll-dots
+
+        +b.main-page
+
+            +e('section').slider(data-section-name="1", data-ride="carousel").js-scroll-section.-carousel.-slide
+
+                .carousel-inner
+                    +e.slider-image-wrap.-carousel-item.-active
+                        +e.slider-image-wrap
+                            +e('img')(src="img/intro-bg.jpg", data-images="https://static8.depositphotos.com/1370441/848/i/450/depositphotos_8486144-stock-photo-beach-and-tropical-sea.jpg, https://st.depositphotos.com/1038117/2709/i/450/depositphotos_27098687-stock-photo-caribbean-sea-and-wooden-platform.jpg, https://kipmu.ru/wp-content/uploads/sam_kr_mor.jpg, https://www.eg.ru/wp-content/uploads/2017/06/70193949217105254.jpg").slider-image
+                            +e.slider-text Idealen - Processen - CRM<br>Wij maken de verbinding
+
+                +e.slider-content
+                    +e.slider-bottom
+                        +e.slider-title
+                            +title-section-big('Het meest geïntegreerde CRM voor goede doelen')
+
+                        +e.slider-button
+                            +button('a', 'Ik wil graag een afspraak maken', '#arrow-right')(href="contact.html").--transparent.--large-square
+
+
+            +e('section').section(data-section-name="2" id="section-how-it-works").js-scroll-section
+                +e.section-title.js-how-it-work-link-desktop
+                    +title-section-big('IT zoals het zou moeten zijn').--additional-background
+
+                +stats()
+
+            +e('section').section(data-section-name="3").js-scroll-section
+
+                +e.section-title.--hidden-mobile
+                    +title-section-big('Beetje eigenwijs voor het beste resultaat').--secondary-background
+
+                +stories()
+

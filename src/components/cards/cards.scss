@@ -1,0 +1,95 @@
+.cards {
+    padding: 0 $global-indent-container-mobile;
+    margin-bottom: 115px;
+
+    @include tablet {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 (-25px);
+    }
+
+    @include desktop {
+        padding: 0 $global-indent-container-desktop;
+    }
+
+    @include desktop-large {
+        margin: 0 (-48px);
+        padding: 0 $global-indent-container-desktop-large;
+    }
+
+    &__item {
+        margin-bottom: 76px;
+
+        @include tablet {
+            width: 50%;
+            padding: 0 25px;
+        }
+
+        @include desktop {
+            width: calc(100% / 3);
+        }
+
+        @include desktop-large {
+            padding: 0 48px;
+        }
+    }
+}
+
+.card {
+    box-shadow: 0 0 40px rgba(#000, 0.13);
+    display: block;
+    text-decoration: none;
+    width: 100%;
+    background-color: #fff;
+
+    @include tablet {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    @include desktop {
+        box-shadow: 0 0 10px rgba(#000, 0.1);
+    }
+
+    &__content {
+        padding: 30px 35px 0;
+
+        @include desktop {
+            padding: 40px 34px 0;
+        }
+    }
+
+    &__title {
+        margin-top: 0;
+        font-size: 2.4rem;
+        font-weight: 700;
+        line-height: 30px;
+        color: #000;
+        margin-bottom: 26px;
+
+        @include desktop {
+            font-size: 2.6rem;
+            line-height: 45px;
+        }
+    }
+
+    &__button {
+        position: relative;
+        bottom: -26px;
+        text-align: center;
+
+        @include tablet {
+            margin-top: auto;
+        }
+
+        @include desktop {
+            bottom: auto;
+            text-align: right;
+        }
+    }
+
+    &__image {
+        width: 100%;
+    }
+}

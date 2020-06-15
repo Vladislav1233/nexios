@@ -1,0 +1,192 @@
+.article {
+    margin-top: -82px;
+    margin-bottom: 100px;
+    padding: 0 $global-indent-container-mobile;
+
+    @media (min-width: 1024px) {
+        margin-top: -90px;
+        padding: 0 $global-indent-container-desktop;
+        font-size: 0;
+        line-height: 0;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 45px;;
+    }
+
+    @include desktop-large {
+        padding: 0 $global-indent-container-desktop-large;
+    }
+
+    &__image-wrap {
+        margin: 0 (-$global-indent-container-mobile);
+        font-size: 0;
+        line-height: 0;
+        position: relative;
+        margin-bottom: 20px;
+
+        @media (min-width: 1024px) {
+            margin: 0 (-$global-indent-container-desktop);
+        }
+
+        @include desktop-large {
+            margin: 0 (-$global-indent-container-desktop-large);
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            width: 100%;
+            height: 127px;
+            display: block;
+            background: linear-gradient(rgba(#000, 0.43), transparent);
+        }
+
+        &::after {
+
+            @media (min-width: 1024px) {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                z-index: 1;
+                width: 100%;
+                height: 33%;
+                display: block;
+                background: linear-gradient(to top, rgba(#000, 0.43), transparent);
+            }
+        }
+
+        img {
+            min-height: 290px;
+            object-fit: cover;
+            width: 100%;
+        }
+    }
+
+    &__info-article {
+        flex-shrink: 0;
+
+        p {
+            color: #A0A0A0;
+            font-size: 1.4rem;
+            line-height: 26px;
+            margin-bottom: 0;
+
+            @media (min-width: 1024px) {
+                font-size: 2rem;
+                line-height: 35px;
+                color: #fff;
+                text-align: right;
+            }
+        }
+    }
+
+    &__header {
+        border-bottom: 2px solid $color-primary;
+        padding-bottom: 50px;
+        margin-bottom: 42px;
+
+        @media (min-width: 1024px) {
+            position: relative;
+            border-bottom: none;
+            padding-bottom: 0;
+            width: 100%;
+            margin-bottom: 82px;
+        }
+    }
+
+    &__header-info {
+
+        @media (min-width: 1024px) {
+            position: absolute;
+            bottom: 35px;
+            left: 0;
+            z-index: 1;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        h1 {
+            
+            @media (min-width: 1024px) {
+                margin: 0;
+                padding-right: 40px;
+                color: #fff;
+                font-size: 4.8rem;
+                line-height: 64px;
+                max-width: 650px;
+            }
+
+            @include desktop-large {
+                max-width: 850px;
+            }
+        }
+    }
+
+    &__aside {
+        display: none;
+
+        @media (min-width: 1024px) {
+            display: block;
+            width: 35%;
+            text-align: right;
+            padding-left: 10px;
+        }
+
+        h4 {
+            color: $color-primary;
+            font-size: 3rem;
+            font-weight: 700;
+            line-height: 40px;
+            margin: 0 0 50px;
+        }
+    }
+
+    &__content {
+
+        @media (min-width: 1024px) {
+            width: 65%;
+            margin-right: auto;
+            max-width: 912px;
+            padding-right: 100px;
+        }
+    }
+
+    &__resent-story {
+
+        @media (min-width: 1024px) {
+            max-width: 398px;
+            margin-left: auto;
+
+            &:not(:last-child) {
+                margin-bottom: 50px;
+            }
+        }
+
+        .card {
+
+            @media (min-width: 1024px) {
+                text-align: left;
+            }
+
+            &__content {
+
+                @media (min-width: 1024px) {
+                    padding-left: 47px;
+                    padding-right: 47px;
+                }
+            }
+
+            &__text {
+                p:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,13 @@
+@mixin link-hover() {
+    border-bottom: 1px solid transparent;
+    transition-duration: $transition-duration;
+
+    &:hover,
+    &:active,
+    &:focus {
+        border-bottom: 1px solid $color-primary;
+        color: $color-primary;
+        transition-duration: $transition-duration;
+    }
+}
+

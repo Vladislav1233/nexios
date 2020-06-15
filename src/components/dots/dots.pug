@@ -1,0 +1,7 @@
+mixin dots(items)
+    +b('ol').dots(class!=attributes.class)
+        each item in items
+            - var child = item.child
+            +e.item&attributes(item.attributes)
+                if(item.child)
+                    | !{child}

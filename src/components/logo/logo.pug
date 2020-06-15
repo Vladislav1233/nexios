@@ -1,0 +1,7 @@
+mixin logo(src="img/logo-nexios-white.svg", tag='a')
+    +b(tag).logo(
+        href=(tag === 'a' ? '/' : false), 
+        title=(tag === 'a' ? 'Nexios' : false), 
+        class!=attributes.class
+    )
+        +e('img')(src=src, alt='Nexios logo').image

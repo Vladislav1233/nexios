@@ -1,0 +1,52 @@
+.dots {
+    padding-left: 0;
+    display: flex;
+
+    &__item {
+        list-style: none;
+        width: 15px;
+        height: 15px;
+        background-color: #EDEDED;
+        border-radius: 50%;
+        transition-property: background-color;
+        transition-duration: 0.3s;
+        cursor: pointer;
+
+        &.active {
+            background-color: #D2D2D2;
+        }
+
+        .carousel-indicators & {
+            width: 15px;
+            height: 15px;
+            padding: 0;
+            opacity: 1;
+            transition-property: background-color;
+            transition-duration: 0.3s;
+            background-color: #EDEDED;
+            margin: 0 24px;
+
+            &.active {
+                background-color: #D2D2D2;
+            }
+        }
+    }
+
+    &--page-scroll {
+        flex-direction: column;
+
+        .dots__item {
+            background-color: #EAEAEA;
+            margin: 31px 0;
+
+            &.active {
+                background-color: #CBCBCB;
+            }
+        }
+    }
+
+    &.carousel-indicators {
+        position: static;
+        margin: 0;
+    }
+}

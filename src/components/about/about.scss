@@ -1,0 +1,126 @@
+.about {
+    padding: 0 $global-indent-container-mobile;
+
+    @include desktop {
+        padding: 0 $global-indent-container-desktop;
+        margin-bottom: 100px;
+    }
+
+    &__presentation {
+        background-color: #EDEDED;
+        margin: -82px (-$global-indent-container-mobile) 70px;
+        padding: 150px $global-indent-container-mobile 0;
+
+        @include desktop {
+            padding: 200px $global-indent-container-desktop 0;
+            margin: -88px (-$global-indent-container-desktop) 200px;
+        }
+    }
+
+    &__presentation-inner,
+    &__content {
+
+        @include desktop {
+            max-width: 1260px;
+            margin: 0 auto;
+        }
+    }
+
+    h1 {
+        font-family: 'Exo 2.0';
+        font-weight: 700;
+        font-size: 3rem;
+        margin-bottom: 30px;
+
+        @include desktop {
+            font-size: 4.5rem;
+        }
+    }
+
+    &__description {
+
+        @include desktop {
+            margin-bottom: -124px;
+        }
+
+        p {
+            color: #939393;
+            font-size: 2rem;
+            line-height: 36px;
+
+            @include desktop {
+                line-height: 55px;
+                font-size: 2.6rem;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    img {
+        transform: translateY(70px);
+        width: 100%;
+
+        @include desktop {
+            transform: translateY(200px);
+        }
+    }
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+
+        @include desktop {
+            flex-direction: row;
+        }
+    }
+
+    &__text {
+        order: 1;
+
+        @include desktop {
+            order: 0;
+            max-width: 778px + 50px;
+            padding-right: 50px;
+            padding-top: 80px;
+        }
+
+        h2 {
+            color: $color-primary;
+            font-size: 2rem;
+            line-height: 35px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        p {
+            @include desktop {
+                font-size: 2rem;
+                line-height: 35px;
+            }
+        }
+    }
+
+    &__title {
+        margin-bottom: 70px;
+
+        @include desktop {
+            margin-left: auto;
+            margin-bottom: 0;
+            flex-shrink: 0;
+        }
+    }
+
+    .title-section-big {
+
+        @include desktop {
+            font-size: 2.5rem;
+        }
+
+        @include desktop-large {
+            font-size: 3rem;
+        }
+    }
+}

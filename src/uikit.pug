@@ -1,0 +1,34 @@
+extends ./templates/_base-template
+
+include ./components/button/button
+
+prepend head
+    - var pageTitle = 'Nexios';
+
+block content
+    section
+        h1 Buttons
+
+        +button('a', 'Ik wil graag een afspraak maken', '#arrow-right')
+        br
+        br
+
+        +button('a', 'Makkelijk zeg je? Proof it!', '#arrow-left').--icon-left.--secondary.--large-square
+        br
+        br
+
+        +button('a', 'Ik wil graag een afspraak maken', '#close').--close
+        br
+        br
+
+        +button('a', '', '#arrow-right').--without-text
+        br
+        br
+
+        +button('button', 'verzenden', '').--small-square
+        br
+        br
+
+        +button('a', 'Zo werkt het', '').--link-style
+        br
+        br

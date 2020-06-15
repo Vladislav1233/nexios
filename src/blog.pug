@@ -1,0 +1,14 @@
+//- Insert common template for all pages
+extends ./templates/_base-template
+include ./components/article/article
+
+prepend head
+    - var pageTitle = 'Nexios - Blog';
+
+block content
+    +b('main').main
+        +e.logo.js-hide-logo
+            +logo('img/logo-nexios-white.svg')
+
+        +article()
+

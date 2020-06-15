@@ -1,0 +1,6 @@
+mixin input(id, label, type="text", tag='input', placeholder)
+    +b.input
+        +e.label-wrap
+            +e('label')(for=id).label #{label}
+
+        +e(tag)(id=id, name=id, type=type, placeholder=placeholder).field

@@ -1,0 +1,13 @@
+//- Insert common template for all pages
+extends ./templates/_base-template
+include ./components/about/about
+
+prepend head
+    - var pageTitle = 'Nexios - About';
+
+block content
+    +b('main').main
+        +e.logo
+            +logo('img/logo-nexios-black.svg')
+
+        +about()

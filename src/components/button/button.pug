@@ -1,0 +1,10 @@
+mixin button(tag, text, icon)
+    +b(tag).button(href=(tag == 'a' ? 'javascript:void(0);' : false), title=(tag == 'a' ? text : false))&attributes(attributes)
+        if(text)
+            span.button__text !{text}
+
+        if(icon)
+            span.button__icon
+                span.icon
+                    svg
+                        use(xlink:href=icon)

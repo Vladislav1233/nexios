@@ -1,0 +1,156 @@
+.stories {
+    margin-bottom: 94px;
+    font-size: 0;
+
+    @include desktop {
+        padding-top: 55px;
+        margin-bottom: 0;
+        position: relative;
+        z-index: 5;
+    }
+
+    @media (min-width: 1280px) and (max-height: $desktop-height-large) {
+        padding-top: 15px;
+    }
+
+    &__title {
+        font-size: 4rem;
+        line-height: 53px;
+        font-weight: 700;
+        font-family: 'Exo 2.0';
+        margin-bottom: 34px;
+        text-align: center;
+        margin-top: 0;
+
+        @media (min-width: 1280px) and (max-height: $desktop-height-large) {
+            font-size: 4rem;
+            margin-bottom: 150px;
+        }
+
+        @include desktop {
+            font-size: 4rem;
+            text-align: left;
+            margin-bottom: 68px;
+        }
+
+        @include desktop-large {
+            text-align: left;
+            font-size: 5.9rem;
+            margin-bottom: 68px;
+        }
+    }
+
+    &__button {
+        transform: translateY(-50%);
+        text-align: center;
+
+        @include desktop {
+            display: none;
+        }
+    }
+
+    &__link-more {
+        text-align: center;
+
+        @include desktop {
+            width: 340px;
+            display: inline-flex;
+            justify-content: flex-end;
+        }
+
+        .button:hover {
+
+            @media (max-width: 1280px) {
+                background-color: $color-secondary;
+            }
+        }
+    }
+
+    &__cards {
+
+        @media (min-width: 1024px) {
+            display: flex;
+        }
+
+        @include desktop {
+            display: inline-flex;
+            width: calc(100% - 224px);
+            margin: 0 -28px;
+        }
+
+        @include desktop {
+            margin: 0 -58px;
+        }
+    }
+
+    &__card {
+        margin-bottom: 80px;
+
+        @media (min-width: 1024px) {
+            width: 50%;
+            padding: 0 28px;
+            max-width: 506px;
+        }
+
+        @include desktop {
+            margin-bottom: -65px;
+        }
+
+        @include desktop-large {
+            padding: 0 58px;
+            max-width: 566px;
+        }
+
+        @media (min-width: 1280px) and (max-height: $desktop-height-large) {
+            margin-bottom: -100px;
+        }
+
+        &:first-child {
+
+            @include desktop {
+                transform: translateY(-130px);
+            }
+        }
+
+        .card {
+
+            @include desktop {
+                box-shadow: 0 0 40px rgba(0, 0, 0, 0.16);
+            }
+
+            &__content {
+                @include desktop-large {
+                    padding-top: 30px;
+                }
+
+                @media (min-width: 1280px) and (max-height: $desktop-height-large) {
+                    padding: 15px 30px 0;
+                }
+            }
+
+            &__text {
+                p {
+                    @media (min-width: 1280px) and (max-height: $desktop-height-large) {
+                        font-size: 1.5rem;
+                        line-height: 27px;
+                        margin-bottom: 0;
+                    }
+                }
+            }
+
+            &__title {
+
+                @media (min-width: 1280px) and (max-height: $desktop-height-large) {
+                    margin-bottom: 10px;
+                    font-size: 2rem;
+                    line-height: 30px;
+                }
+            }
+
+            &__image {
+                height: 150px;
+                object-fit: cover;
+            }
+        }
+    }
+}

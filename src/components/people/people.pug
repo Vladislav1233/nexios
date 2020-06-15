@@ -1,0 +1,42 @@
+mixin people()
+    +b('section').people
+        +e.carousel.js-people-slider
+            +e.swiper-wrapper.-swiper-wrapper
+                +e.swiper-slide.-swiper-slide
+                    +person("img/john.jpg", 'John', 'Developer, dierenvriend, voetballer, anti-stresskip ')
+
+                +e.swiper-slide.-swiper-slide
+                    +person("img/jake.jpg", 'Jake', 'Directeur, schaatser, postzegelverzamelaar')
+
+                +e.swiper-slide.-swiper-slide
+                    +person("img/jeremiah.jpg", 'Jeremiah', 'Back-en developer, wereldreiziger, surfer ')
+
+                +e.swiper-slide.-swiper-slide
+                    +person("img/jane.jpg", 'Jane', 'Marketingspecialist, yogafanaat, fotograaf')
+
+                +e.swiper-slide.-swiper-slide
+                    +person("img/john.jpg", 'John', 'Developer, dierenvriend, voetballer, anti-stresskip ')
+
+            +e.dots.-swiper-pagination
+
+        +e.nav
+            +e.nav-prev.-swiper-button-prev
+                .icon
+                    svg
+                        use(xlink:href='#arrow-right')
+            +e.nav-next.-swiper-button-next
+                .icon
+                    svg
+                        use(xlink:href='#arrow-right')
+
+mixin person(src, name, description)
+    +b.person
+        +e.image-wrap
+            img(src=src, alt="")
+
+        +e.content-wrap
+            +e.text
+                h4 #{name}
+                p #{description}
+
+            +e.icon

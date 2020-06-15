@@ -1,0 +1,48 @@
+// Media Queries
+$tablet: 768px;
+$tablet-big: 1024px;
+$desktop: 1280px;
+$desktop-medium: 1600px;
+$desktop-large: 1920px;
+$desktop-height-large: 930px;
+
+// Fonts
+$font-family: "Lato", Helvetica, Arial, sans-serif;
+$font-family-title: "Exo 2.0", Helvetica, Arial, sans-serif;
+$font-weight: 400;
+$font-size: 1.6rem;
+$line-height: 1.5;
+
+
+// Layout
+$global-indent-container-mobile: 36px;
+$global-indent-container-tablet: 36px;
+$global-indent-container-desktop: 72px;
+$global-indent-container-desktop-large: 144px;
+
+// Colors
+$color-white-global: #fff;
+$color-black-global: #000;
+$color-grey-global: #f0f0f0;
+$color-light-grey-global: #f0f0f0;
+
+$color-primary: #ff8224;
+$color-secondary: #186d68;
+
+$background-color-primary: #ff8224;
+$background-color-secondary: #186d68;
+$background-color-additional: #007594;
+
+$body-bg-color: #f0f0f0;
+$body-color: $color-primary;
+
+$text-color: #000;
+$color-red: #d80000;
+$color-blue: #2880A0;
+
+
+// Transitions
+$transition-duration: 0.2s;
+
+$global-height-toggle-menu: 82px;
+$global-indent-top-for-logo: 23px;

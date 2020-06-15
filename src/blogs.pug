@@ -1,0 +1,19 @@
+//- Insert common template for all pages
+extends ./templates/_base-template
+include ./components/cards/cards
+include ./components/stories-slider/stories-slider
+
+prepend head
+    - var pageTitle = 'Nexios - Blogs';
+
+block content
+    +b('main').main
+        +e.logo.js-hide-logo
+            +logo('img/logo-nexios-black.svg')
+
+        +e('h1').stories-title Stories
+
+        +stories-slider()
+
+        +cards()
+

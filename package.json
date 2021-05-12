@@ -92,6 +92,6 @@
   "dependencies": {
     "del": "^3.0.0",
     "modernizr": "^3.6.0",
-    "swiper": "^4.4.6"
+    "swiper": "^6.5.1"
   }
 }
